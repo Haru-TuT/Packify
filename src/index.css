@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: #1E3A6E;
+    background-color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer components {
+  /* Botón primario — azul cyan de marca */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-brand-cyan hover:bg-[#3A9DC4] text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg;
+  }
+
+  /* Botón secundario — outline blanco */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200;
+  }
+
+  /* Botón oscuro — navy */
+  .btn-dark {
+    @apply inline-flex items-center justify-center gap-2 bg-brand-navy hover:bg-brand-dark text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200;
+  }
+
+  /* Botón outline — para fondos claros */
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 border-2 border-brand-cyan text-brand-cyan hover:bg-brand-cyan hover:text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200;
+  }
+
+  /* Card estándar */
+  .card {
+    @apply bg-white rounded-2xl shadow-card hover:shadow-card-hover transition-shadow duration-200 p-6;
+  }
+
+  /* Título de sección */
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-brand-dark;
+  }
+
+  /* Eyebrow label */
+  .eyebrow {
+    @apply text-brand-cyan font-semibold text-sm uppercase tracking-widest;
+  }
+
+  /* Badge eco */
+  .badge-eco {
+    @apply inline-flex items-center gap-1.5 bg-green-100 text-green-700 text-sm font-medium px-3 py-1 rounded-full;
+  }
+
+  /* Hero de página interior */
+  .page-hero {
+    @apply bg-gradient-to-r from-brand-dark to-brand-navy pt-32 pb-16;
+  }
+
+  /* Formulario input */
+  .form-input {
+    @apply w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-brand-cyan focus:border-transparent transition-all placeholder-gray-400;
+  }
+
+  /* Label de formulario */
+  .form-label {
+    @apply block text-sm font-medium text-brand-navy mb-1.5;
+  }
+}
+
+/* Animación de entrada fade-up */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-up {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* Timeline — línea horizontal (desktop) */
+.timeline-line {
+  position: absolute;
+  top: 28px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(to right, #4AAFD6, #1E3A6E);
+}
